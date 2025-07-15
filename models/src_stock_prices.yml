@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    database: finance_analytics    # all lowercase
+    schema: raw                    # lowercase
+    tables:
+      - name: stock_prices
