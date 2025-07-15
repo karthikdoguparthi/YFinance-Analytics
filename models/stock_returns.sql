@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+with
+    prices as (
+        select
+            ticker,
+            date,
+            adj_close,
+            lag(adj_close) over (partition by ticker order by date) as prev_close
+        from {{ source("raw", "stock_prices") }}
+    ),
+
+    returns as (
+        select
+            ticker,
+            date,
+            adj_close,
+            prev_close,
+            (adj_close - prev_close) / prev_close as daily_return
+        from prices
+        where prev_close is not null
+    )
+
+select *
+from returns
+=======
 -- models/stock_returns.sql
 
 WITH base AS (
@@ -22,3 +47,4 @@ SELECT
 FROM returns r
 LEFT JOIN {{ ref('sectors') }} s
     ON r.ticker = s.ticker
+>>>>>>> 2b4efee17ecb41282497eb0dc8bce17229ef7134
