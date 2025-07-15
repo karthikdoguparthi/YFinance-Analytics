@@ -1,0 +1,11 @@
+name: my_new_project
+version: '1.0'
+
+profile: my_profile_name  # This must match your profiles.yml (for Snowflake connection)
+
+model-paths: ["models"]
+
+models:
+  my_new_project:
+    +schema: analytics
+    +materialized: view
