@@ -2,7 +2,14 @@ version: 2
 
 sources:
   - name: raw
+<<<<<<< HEAD
     database: finance_analytics
     schema: raw
     tables:
       - name: stock_prices
+=======
+    database: finance_analytics    # all lowercase
+    schema: raw                    # lowercase
+    tables:
+      - name: stock_prices
+>>>>>>> 2b4efee17ecb41282497eb0dc8bce17229ef7134
